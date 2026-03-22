@@ -1,0 +1,604 @@
+/* =========================================================================
+   ASSETS/CSS/MI_BANKA.CSS
+   Hoja de estilos principal para el Dashboard "Mi Banka"
+   ========================================================================= */
+
+/* =========================================================================
+   1. CONFIGURACIÓN BASE Y GLOBALES
+   ========================================================================= */
+/* Transición suave para cambiar entre modo oscuro y claro */
+body {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Contenedor principal de todas las pantallas de Mi Banka */
+.banka-container {
+    padding: 20px;
+}
+
+/* =========================================================================
+   2. TARJETAS (CARDS) BASE
+   ========================================================================= */
+/* Estilo base de los contenedores oscuros con efecto "cristal" (Glassmorphism) */
+.banka-card {
+    background: rgba(26, 26, 46, 0.8);
+    border: 1px solid rgba(0, 212, 255, 0.3);
+    border-radius: 10px;
+    padding: 20px;
+    backdrop-filter: blur(10px);
+    margin-bottom: 25px;
+    color: #e0e0e0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+/* Efecto al pasar el cursor (Hover) sobre una tarjeta general */
+.banka-card:hover {
+    border-color: #00d4ff;
+    box-shadow: 0 10px 30px rgba(0, 212, 255, 0.1);
+}
+
+/* Títulos principales dentro de las tarjetas */
+.banka-card h2 {
+    color: #00d4ff;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+    padding-bottom: 10px;
+}
+
+/* =========================================================================
+   3. ESTILOS DE FORMULARIOS (CREAR/EDITAR)
+   ========================================================================= */
+.banka-form label {
+    display: block;
+    color: #00d4ff;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+/* Entradas de texto, números, fechas y listas desplegables */
+.banka-form input[type="text"],
+.banka-form input[type="number"],
+.banka-form input[type="date"],
+.banka-form select {
+    width: 100%;
+    max-width: 400px;
+    padding: 12px;
+    background: rgba(15, 15, 30, 0.8);
+    border: 1px solid rgba(0, 212, 255, 0.3);
+    color: #e0e0e0;
+    border-radius: 5px;
+    font-family: inherit;
+    transition: all 0.3s ease;
+    margin-bottom: 20px;
+}
+
+/* Efecto al seleccionar/escribir en un campo */
+.banka-form input:focus,
+.banka-form select:focus {
+    outline: none;
+    border-color: #00d4ff;
+    box-shadow: 0 0 10px rgba(0, 212, 255, 0.2);
+}
+
+/* =========================================================================
+   4. TABLAS DE DATOS (VERSIÓN ESCRITORIO)
+   ========================================================================= */
+/* Wrapper para permitir scroll horizontal nativo si es necesario en escritorio */
+.banka-table-wrapper {
+    overflow-x: auto;
+}
+
+/* Estructura base de la tabla */
+.banka-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-top: 15px;
+}
+
+/* Cabeceras de las columnas (Nombres de las columnas) */
+.banka-table th {
+    background: rgba(0, 212, 255, 0.1);
+    color: #00d4ff;
+    padding: 15px;
+    text-align: left;
+    border-bottom: 2px solid rgba(0, 212, 255, 0.3);
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9em;
+}
+
+/* Celdas normales con información */
+.banka-table td {
+    padding: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    /* Efecto divisor entre filas de tabalas */
+    color: #e0e0e0;
+    vertical-align: middle;
+}
+
+.banka-table tbody tr {
+    transition: background 0.3s ease;
+}
+
+/* Efecto al pasar el mouse por encima de una fila */
+.banka-table tbody tr:hover {
+    background: rgba(0, 212, 255, 0.05);
+}
+
+.banka-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* =========================================================================
+   5. BOTONES GLOBALES Y COLORES DE TEXTO (TEXT COLORS)
+   ========================================================================= */
+.banka-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    text-align: center;
+    font-size: 0.95rem;
+}
+
+/* Botón principal (Ej: Guardar, Confirmar) */
+.banka-btn-primary {
+    background: linear-gradient(135deg, #00d4ff 0%, #00a8cc 100%);
+    color: #0f0f1e;
+}
+
+.banka-btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 212, 255, 0.3);
+    color: #0f0f1e;
+    text-decoration: none;
+}
+
+/* Botón éxito (Ej: Nueva Categoría, Nuevo Movimiento) */
+.banka-btn-success {
+    background: rgba(0, 255, 65, 0.2);
+    border: 1px solid #00ff41;
+    color: #00ff41;
+}
+
+.banka-btn-success:hover {
+    background: rgba(0, 255, 65, 0.3);
+    box-shadow: 0 5px 15px rgba(0, 255, 65, 0.2);
+    color: #00ff41;
+}
+
+/* Botón de tipo "Editar" */
+.banka-btn-edit {
+    background: rgba(0, 212, 255, 0.1);
+    border: 1px solid #00d4ff;
+    color: #00d4ff;
+    padding: 6px 12px;
+    font-size: 0.85rem;
+    margin-right: 5px;
+}
+
+.banka-btn-edit:hover {
+    background: rgba(0, 212, 255, 0.3);
+    color: #00d4ff;
+}
+
+/* Botón de tipo "Eliminar" */
+.banka-btn-delete {
+    background: rgba(255, 69, 0, 0.1);
+    border: 1px solid #ff4500;
+    color: #ff6b6b;
+    padding: 6px 12px;
+    font-size: 0.85rem;
+}
+
+.banka-btn-delete:hover {
+    background: rgba(255, 69, 0, 0.3);
+    color: #ff6b6b;
+}
+
+/* Textos de Dinero/Monto (Color Verde y Rojo) */
+.banka-text-green {
+    color: #00ff41 !important;
+    font-weight: bold;
+}
+
+.banka-text-red {
+    color: #ff6b6b !important;
+    font-weight: bold;
+}
+
+/* =========================================================================
+   6. MODO CLARO (LIGHT MODE OVERRIDES)
+   Todo el diseño alterno al pulsar el botón de modo claro
+   ========================================================================= */
+body.light-mode {
+    background: #f4f7f6;
+    color: #333;
+}
+
+/* Fondo blanco para las tarjetas bases en vez de transparente/oscuro */
+body.light-mode .banka-card {
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    color: #333;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+body.light-mode .banka-card:hover {
+    border-color: #007bff;
+    box-shadow: 0 8px 25px rgba(0, 123, 255, 0.15);
+}
+
+body.light-mode .banka-card h2 {
+    color: #007bff;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+/* Diseño de tabla color blanco */
+body.light-mode .banka-table th {
+    background: #f8f9fa;
+    color: #495057;
+    border-bottom: 2px solid #dee2e6;
+}
+
+body.light-mode .banka-table td {
+    color: #333;
+    border-bottom: 1px solid #e9ecef;
+}
+
+body.light-mode .banka-table tbody tr:hover {
+    background: #f8f9fa;
+}
+
+/* Diseño de formularios en blanco y contornos marcados */
+body.light-mode .banka-form label {
+    color: #495057;
+}
+
+body.light-mode .banka-form input[type="text"],
+body.light-mode .banka-form input[type="number"],
+body.light-mode .banka-form input[type="date"],
+body.light-mode .banka-form select {
+    background: #ffffff;
+    border: 1px solid #ced4da;
+    color: #495057;
+}
+
+body.light-mode .banka-form input:focus,
+body.light-mode .banka-form select:focus {
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+body.light-mode .banka-btn-primary {
+    background: #007bff;
+    color: #fff;
+}
+
+body.light-mode .banka-btn-primary:hover {
+    background: #0069d9;
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+}
+
+body.light-mode .banka-btn-edit {
+    background: #e2eef9;
+    border-color: #007bff;
+    color: #007bff;
+}
+
+body.light-mode .banka-btn-edit:hover {
+    background: #007bff;
+    color: #fff;
+}
+
+body.light-mode .banka-btn-delete {
+    background: #fdeaea;
+    border-color: #dc3545;
+    color: #dc3545;
+}
+
+body.light-mode .banka-btn-delete:hover {
+    background: #dc3545;
+    color: #fff;
+}
+
+body.light-mode .banka-text-green {
+    color: #28a745 !important;
+}
+
+body.light-mode .banka-text-red {
+    color: #dc3545 !important;
+}
+
+/* =========================================================================
+   7. SECCIÓN DEL DASHBOARD Y RESÚMENES GRANDES
+   Tarjetas de 'Resumen Financiero', 'Balances por Banco' y 'Detalle de un Banco'
+   ========================================================================= */
+
+/* Retícula o "Grid" para agrupar muchas tarjetas vertical y horizontalmente */
+.banka-dashboard-grid {
+    display: grid;
+    /* Crea cuantas columnas de mín 320px le quepan en la pantalla */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+/* La tarjeta física dentro del Grid (El rectángulo con el gran icono y la gran cantidad) */
+.banka-summary-card {
+    background: rgba(26, 26, 46, 0.8);
+    border: 1px solid rgba(0, 212, 255, 0.3);
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    display: flex;
+    /* Ordena los elementos en fila... */
+    flex-direction: column;
+    /* ...y luego en columna para que caigan uno abajo del otro! */
+    align-items: center;
+
+    /* Reglas Anti-desborde para que ninguna caja rompa la pantalla */
+    box-sizing: border-box;
+    width: 100%;
+    overflow: hidden;
+}
+
+.banka-summary-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 212, 255, 0.15);
+    border-color: #00d4ff;
+}
+
+/* Título superior de una tarjeta grande ("Gastos Totales", "Davivienda", etc.) */
+.banka-summary-card h3 {
+    margin: 0;
+    font-size: 1rem;
+    color: #a0a0b0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* El texto de los Dólares Grandes/Dinero ($4,000,000) de la tarjeta principal */
+.banka-summary-card .amount {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 10px 0 0 0;
+    color: #e0e0e0;
+    word-break: break-word;
+    /* Si el número es inmenso ($239,321,556,123) permite bajar de línea para salvar la web */
+    max-width: 100%;
+}
+
+/* Iconos (.mdi) que están en las tarjetas grandes */
+.banka-summary-card .icon {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #00d4ff;
+}
+
+/* =========================================================================
+   8. MENÚ DE ACCESO RÁPIDO Y SUS BOTONES "ACCIONES" EN EL HOME
+   ========================================================================= */
+/* El grid agrupador (Contenedor que los pone rectos). También se usa por error en balances. */
+.banka-actions-grid {
+    display: grid;
+    /* Crea columnas de al menos 130px de ancho */
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+/* Botón cuadrado o cuadro de Acciones ("Crear Transacción", "Movimientos") */
+.banka-action-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(15, 15, 30, 0.8);
+    border: 1px solid rgba(0, 212, 255, 0.2);
+    border-radius: 12px;
+    padding: 20px;
+    color: #00d4ff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.banka-action-btn:hover {
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(0, 168, 204, 0.1) 100%);
+    border-color: #00d4ff;
+    transform: translateY(-3px);
+    color: #00d4ff;
+    text-decoration: none;
+}
+
+.banka-action-btn i {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.banka-action-btn span {
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-align: center;
+}
+
+/* =========================================================================
+   8B. ELEMENTOS DEL DASHBOARD EN MODO CLARO
+   Aplica a las secciones 7 y 8 al tocar el switch de Theme Toggle
+   ========================================================================= */
+body.light-mode .banka-summary-card {
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+}
+
+body.light-mode .banka-summary-card h3 {
+    color: #6c757d;
+}
+
+body.light-mode .banka-summary-card .amount {
+    color: #333;
+}
+
+body.light-mode .banka-summary-card .icon,
+body.light-mode .banka-action-btn {
+    color: #007bff;
+}
+
+body.light-mode .banka-action-btn {
+    background: #f8f9fa;
+    border-color: #ced4da;
+    color: #007bff;
+}
+
+body.light-mode .banka-action-btn:hover {
+    background: #e2eef9;
+    border-color: #007bff;
+    color: #0056b3;
+}
+
+
+/* =========================================================================
+   9. RESPONSIVE Y TABLAS EN MÓVILES (@MEDIA 768px MIN)
+   ATENCIÓN: CUALQUIER REGLA ENTRE ESTAS LLAVES SÓLO SE APLICARÁ SI EL DISPOSITIVO
+   ES MÁS PEQUEÑO DE 768PX (COMO UN TELÉFONO O UNA PEQUEÑA TABLETA HASTA EN VERTICAL)
+   ========================================================================= */
+@media screen and (max-width: 768px) {
+
+    /* 9A. AJUSTE DE GRIDS Y TARJETAS EN PANTALLA DE TELÉFONO */
+    /* Quita espacio grande a las orillas para que las cajas aprovechen más % de visión */
+    .banka-container {
+        padding: 10px;
+    }
+
+    /* Vuelve los cuadritos una sola columna de 1 fila (Una caja gigante encima de otra) */
+    .banka-dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Lo mismo pero asegurándonos de sobre-escribir códigos Inline del PHP usando "!important" */
+    .banka-actions-grid[style*="minmax"] {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Hace las tarjetas más cerradas quitando rellenos internos (Paddings) exagerados */
+    .banka-summary-card {
+        padding: 15px !important;
+    }
+
+    /* Empequeñece la fuente al nivel que tu elegiste recientemente a 1.3rem */
+    .banka-summary-card .amount,
+    .banka-summary-card div[style*="font-size: 1.6em"] {
+        font-size: 1.3rem !important;
+    }
+
+    /* 9B. CONVERTIDOR MAGICO DE "TABLA CLÁSICA" HACIA -> "TARJETA RESPONSIVA" DE MÓVILES */
+    .banka-table-wrapper {
+        border: none;
+    }
+
+    /* Rompe la naturaleza estructural de la tabla forzando que se comporten como cajas blockeables horizontales */
+    .banka-table,
+    .banka-table tbody,
+    .banka-table tr,
+    .banka-table td {
+        display: block;
+        width: 100%;
+    }
+
+    /* Desaparece los ENCABEZADOS DE ARRIBA ("ID", "FECHA", etc.) para no duplicarlos (usaremos etiquetas custom) */
+    .banka-table thead {
+        display: none;
+    }
+
+    /* AHORA CADA FILA (TR) funciona visualmente como el "Molde de una tarjeta" individual */
+    .banka-table tr {
+        margin-bottom: 20px;
+        background: rgba(15, 15, 30, 0.5);
+        /* Color de fondo oscuro y leve neón */
+        border: 1px solid rgba(0, 212, 255, 0.2);
+        border-radius: 8px;
+        padding: 5px;
+    }
+
+    /* AHORA CADA CELDA DENTRO DE ESA FILA (TD) es un display flex ordenado de Derecha <- a -> Izquierda */
+    .banka-table td {
+        display: flex;
+        /* Flexbox para separar extremo izquierdo y extremo derecho */
+        justify-content: space-between;
+        align-items: center;
+        text-align: right;
+        /* Alineamos el valor contenido a la derecha de la fila  */
+        padding: 10px 15px;
+        position: relative;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        /* Le aplica un sútil contorno */
+        font-size: 0.95em;
+    }
+
+    /* La última linea (Frecuentemente el boton eliminar/acciones) se salva de tener un borde por debajito: */
+    .banka-table td:last-child {
+        border-bottom: none;
+    }
+
+    /* 9C. CREADOR DEL DATA-LABEL DE LA CELDA (EL COMPONENETE ESTRELLA) */
+    /* Aquí extraemos la etiqueta (ej: `data-label="Monto"` puesto en los .php) y la metemos a la fuerza como texto a la izquierda: */
+    .banka-table td::before {
+        content: attr(data-label);
+        /* Extrae textualmente el "data-label" de la celda */
+        font-weight: 600;
+        color: #00d4ff;
+        text-transform: uppercase;
+        font-size: 0.85em;
+        margin-right: 15px;
+        /* Crea un ligero gap con el valor */
+        text-align: left;
+        flex-shrink: 0;
+    }
+
+    /* Controla que si existen MÚLTIPLES BOTONES DE EDICIÓN logren enrollarse al faltar espacio, en vez de encimarse en pantallas hiperpequeñas */
+    .banka-table td[data-label="Acciones"] {
+        display: flex;
+        flex-wrap: wrap;
+        /* El wrap salva las estructuras */
+        gap: 10px;
+        justify-content: flex-end;
+        /* A la derecha pero se expanden en colum si es requerido */
+    }
+
+    /* 9D. REDEFINICIÓN EN MÓVILES PARA MODO CLARO DE ESTAS "TARJETAS FALSAS" */
+    body.light-mode .banka-table tr {
+        background: #f8f9fa;
+        border: 1px solid #dee2e6;
+    }
+
+    body.light-mode .banka-table td::before {
+        color: #007bff;
+    }
+
+    body.light-mode .banka-table td {
+        border-bottom: 1px solid #e9ecef;
+    }
+
+    /* 9E. FIJACIONES DE LA TABLA (EL "DIVISOR MENSUAL TR" EN TRANSACTONES) */
+    /* Cuando se agrupan items por Octubre-Marzo, necesitamos sobre-escribir comportamientos de las cajas previas */
+    .banka-table tr[style*="background-color"] td[colspan] {
+        display: block;
+        /* Romper la flexiblidad */
+        text-align: center;
+        /* Centrar  */
+        justify-content: center;
+    }
+
+    /* Quitarle el inyector ("Before / data-label") a ese único recuadro para que sea un título limpio centrado. */
+    .banka-table tr[style*="background-color"] td[colspan]::before {
+        content: none;
+    }
+}
