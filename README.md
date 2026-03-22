@@ -11,7 +11,7 @@ Este proyecto utiliza un diseño de **Glassmorphism** con efectos **Neón**, opt
 
 ## ✨ Vista previa
 
-![Mi_Banka_Preview](previewbanka.gif)
+![Mi_Banka_Preview](previewmibanka.gif)
 
 ---
 
