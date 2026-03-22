@@ -1,6 +1,40 @@
-<?php include __DIR__ . 'conexion.php'; ?>
+<pre class="ascii-art">
+      _  _____ _____  _    _ _____   ____  
+     | |/ ____|  __ \| |  | |  __ \ / __ \ 
+     | | |    | |  | | |  | | |__) | |  | |
+ _   | | |    | |  | | |  | |  _  /| |  | |
+| |__| | |____| |__| | |__| | | \ \| |__| |
+ \____/ \_____|_____/ \____/|_|  \_\\____/ 
+</pre>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="40">
+    <title>aqui File Uploader</title>
+    <link rel="stylesheet" href="css/mi_banka.css">
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>JcDuroDashBoard</title>
+
+         <!-- Buscador1 Cards.css -->
+    <link rel="stylesheet" href="css/buscador1.css">
+ 
+ 
 
 
+    </head>
+
+<body>
+<?php include __DIR__ . 'conexion.php'; ?>    
 <?php
 // Calculate Summary Data
 $incomeQuery = $pdo->query("SELECT SUM(amount) as total FROM transactions WHERE type='income'");
@@ -120,3 +154,11 @@ else {
         </div>
     </div>
 </div>
+
+
+
+
+
+  </body>
+</html>
+
