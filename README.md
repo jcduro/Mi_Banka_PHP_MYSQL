@@ -17,7 +17,7 @@ Este proyecto utiliza un diseño de **Glassmorphism** con efectos **Neón**, opt
 
 ## ✨ Pruevalo Online
 
-[Mi_Banka](https://jcduro.bexartideas.com/proyectos/dashjc/mi_banka/)
+[Mi_Banka](https://jcduro.bexartideas.com/proyectos/dashjc/mi_banka/index.php)
 
 --- 
 
