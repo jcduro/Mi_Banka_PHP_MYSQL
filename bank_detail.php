@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . 'config.php';
+require_once __DIR__ . 'conexion.php';
 
 $bank_id = isset($_GET['bank_id']) ? (int)$_GET['bank_id'] : 0;
 
