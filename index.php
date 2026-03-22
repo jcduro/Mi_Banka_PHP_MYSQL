@@ -7,15 +7,7 @@
  \____/ \_____|_____/ \____/|_|  \_\\____/ 
 </pre>
 
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="40">
-    <title>aqui File Uploader</title>
-    <link rel="stylesheet" href="css/mi_banka.css">
-</head>
-<body>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,12 +17,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>JcDuroDashBoard</title>
 
-         <!-- Buscador1 Cards.css -->
-    <link rel="stylesheet" href="css/buscador1.css">
+    <link rel="stylesheet" href="css/mi_banka.css">
  
- 
-
-
     </head>
 
 <body>
